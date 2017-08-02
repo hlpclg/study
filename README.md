@@ -1,3 +1,3 @@
 # study
 
-study Laravel Rlixir 
+study Laravel Elixir 
