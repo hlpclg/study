@@ -2,11 +2,8 @@
 * @Author: GuoSai
 * @Date:   2017-08-10 23:56:37
 * @Last Modified by:   Peter
-* @Last Modified time: 2017-08-10 23:59:53
+* @Last Modified time: 2017-09-09 01:17:28
 */
-
-'use strict';
-
 
 'use strict';
 
@@ -22,9 +19,6 @@ Elixir.extend('speak', function(message) {
 
     new Task('speak', function() {
         return gulp.src('').pipe(shell('say ' + message));
-    });
+    }).watch('./public/**');
 
-}).watch('./app/**');
-
-
-// mix.speak('Hello World');
+});

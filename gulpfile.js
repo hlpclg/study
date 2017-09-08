@@ -28,11 +28,16 @@ elixir.config.production = false;
 // elixir.config.jsOutput = false;
 elixir.config.sourcemaps = false;
 
-// 
-elixir(function(mix) {
-    mix.sass(['app.scss', 'content.scss']);
-});
+/**
+ * #sass method
+ */
+// elixir(function(mix) {
+//     mix.sass(['app.scss', 'content.scss']);
+// });
 
+/**
+ * #less method
+ */
 // 默认生成app.css 
 // elixir(function(mix) {
 //     mix.less(['app.less', 'controllers.less']);
@@ -43,9 +48,65 @@ elixir(function(mix) {
 //     mix.less(['app.less', 'controllers.less'], 'public/stylesheets/style.css');
 // });
 
+// #styles method
 // 默认生成all.css 
 // elixir(function(mix) {
 //     mix.styles([
 //         'main.css'
 //     ]);
 // });
+// 
+// # browserify method
+// elixir(function(mix) {
+//     mix.browserify('main.js');
+// });
+// 
+// 
+
+
+/**
+ * babel method
+ */
+// elixir(function(mix) {
+//     mix.babel([
+//         'order.js',
+//         'product.js'
+//     ]);
+// });
+
+/**
+ * scripts method.
+ */
+// elixir(function(mix) {
+//     mix.scripts([
+//         'main.js',
+//         'app.js'
+//     ]);
+// });
+// 
+
+// 合并多个文件到不同的文件
+// elixir(function(mix) {
+//     mix.scripts(['app.js', 'controllers.js'], 'public/js/app.js')
+//         .scripts(['forum.js', 'threads.js'], 'public/js/forum.js');
+// });
+
+
+/**
+ * version method (对public文件夹下的文件增加版本号)
+ * @param  {[type]} mix) { mix.version(['css/all.css', 'js/app.js']);} [description]
+ * @return {[type]}      [description]
+ */
+elixir(function(mix) {
+    mix.version(['css/all.css', 'js/app.js']);
+});
+
+
+/**
+ * #task method
+ */
+require('./tasks/elixir-extensions');
+
+elixir(function(mix) {
+    // mix.speak('Tea, Earl Grey, Hot');
+});
